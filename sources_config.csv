@@ -1,0 +1,27 @@
+﻿source_id,org,org_type,region,channel_type,url,notes,parse_hint
+fia_press_releases,FIA (Futures Industry Association),association,Global,rss_auto_discover,https://www.fia.org/press-releases,Prefer RSS if present on page; fallback scrape press release list.,discover:rel=alternate|contains=rss|feed
+wfe_news,WFE (World Federation of Exchanges),association,Global,html_list,https://www.world-exchanges.org/news,WFE official news/press releases listing.,extract:links+dates from page
+wfe_focus_news,WFE Focus,association,Global,html_list,https://focus.world-exchanges.org/features/news,WFE magazine Focus 'News' features; useful for industry commentary.,extract:article cards
+cftc_rss_index,CFTC (US),regulator,USA,rss_index,https://www.cftc.gov/RSS/index.htm,"CFTC provides multiple RSS feeds (press releases, enforcement, rules, etc.) via index.",extract:all rss links from index
+nfa_rss_index,NFA (US SRO),sro,USA,rss_index,https://www.nfa.futures.org/news/rss.asp,NFA provides RSS feeds for key sections; parse feed list page then subscribe to chosen feeds.,extract:rss links from page
+iosco_media_releases,IOSCO,association_regulatory,Global,html_list,https://www.iosco.org/media_room/?subsection=media_releases,IOSCO media releases list; site may not provide RSS; scrape list.,pagination:?page=
+bis_rss_index,BIS (Bank for International Settlements),institution,Global,rss_index,https://www.bis.org/rss/index.htm,BIS RSS index page; choose feeds relevant to market infrastructure/regulation.,extract:rss links from page
+esma_press_releases,ESMA (EU),regulator,EU,html_list,https://www.esma.europa.eu/press-news/press-releases,ESMA press releases listing; scrape list and follow detail links.,extract:rows with date+title+link
+fca_news,FCA (UK),regulator,UK,rss_auto_discover,https://www.fca.org.uk/news,FCA news page provides an RSS feed link.,discover:anchor text contains 'RSS Feed'
+cme_rss_index,CME Group (CME/CBOT/NYMEX/COMEX),exchange,USA,rss_index,https://www.cmegroup.com/rss.html,"CME publishes multiple RSS feeds (press releases, clearing advisories, Globex advisories, etc.) via a directory page.",extract:feed URLs from page
+ice_email_alerts,ICE (Intercontinental Exchange),exchange,Global,email_imap,https://ir.theice.com/press/press-releases/default.aspx,"ICE exchange/corporate releases are most reliably obtained via email alerts (subscription form). For futures notices/circulars, also consider ICE Futures US/Europe notice pages plus email subscriptions.",imap:search=UNSEEN;parse:links+subject
+ice_futures_us_notices,ICE Futures U.S.,exchange,USA,html_list,https://www.ice.com/futures-us/notices,Notices page describes updates; content may be JS-rendered; recommended to pair with email alerts as primary source.,fallback=email;try:extract:pdf links
+ice_futures_europe_circulars,ICE Futures Europe,exchange,EU/UK,html_list,https://www.ice.com/futures-europe/circulars,Circulars page; content may be JS-rendered; recommended to pair with email alerts.,fallback=email;try:extract:pdf links
+ice_endex_circulars,ICE Endex,exchange,EU,html_list,https://www.ice.com/endex/circulars,Circulars page; may be JS-rendered; recommended to pair with email alerts.,fallback=email
+lme_press_releases_sitemap,LME (London Metal Exchange),exchange,UK,sitemap,https://www.lme.com/sitemap.xml,Use sitemap to capture new LME press releases and notices pages; filter URLs containing '/news/press-releases/' and optionally '/api/sitecore/MemberNoticesSearchApi/Download'.,include_patterns=/news/press-releases/|MemberNoticesSearchApi/Download
+b3_trading_support_rss,B3 (Brazil) Trading Support,exchange,Brazil,rss,https://www.b3.com.br/data/rss/tradingsupport.xml,Official RSS for B3 trading support news (English).,rss
+mcx_press_release_rss,MCX (India),exchange,India,rss,https://www.mcxindia.com/en/rssfeed/pressrelease,MCX official RSS - media press releases.,rss
+mcx_circular_ctcl_rss,MCX (India),exchange,India,rss,https://www.mcxindia.com/en/rssfeed/circulars/ctcl,MCX official RSS - circulars (CTCL).,rss
+mcx_circular_membership_rss,MCX (India),exchange,India,rss,https://www.mcxindia.com/en/rssfeed/circulars/membership-and-compliance,MCX official RSS - membership & compliance circulars.,rss
+mcx_circular_tech_rss,MCX (India),exchange,India,rss,https://www.mcxindia.com/en/rssfeed/circulars/tech,MCX official RSS - technology circulars.,rss
+hkex_hkfe_circulars_rss,HKEX / HKFE,exchange,Hong Kong,rss,https://www.hkex.com.hk/Services/RSS-Feeds/Hong-Kong-Futures-Exchange-Limited?sc_lang=en,HKEX provides RSS for HKFE participant circulars and trading rule updates.,rss
+hkex_hkfe_trading_rules_rss,HKEX / HKFE,exchange,Hong Kong,rss,https://www.hkex.com.hk/Services/RSS-Feeds/Updates-to-Trading-Rules-of-HKFE?sc_lang=en,HKEX RSS: updates to HKFE trading rules.,rss
+jpx_derivatives_halt_rss,JPX / OSE,exchange,Japan,rss,https://www.jpx.co.jp/english/rss/derivatives-suspended.xml,JPX RSS: trading halt (derivatives).,rss
+jpx_market_news_rss,JPX,exchange,Japan,rss,https://www.jpx.co.jp/english/rss/jpx-news.xml,JPX RSS: market news (broad).,rss
+eurex_impl_news_rss,Eurex,exchange,EU,rss,https://www.eurex.com/ex-en/support/information-channels/implementation-news/3428!rss,Eurex Implementation News RSS (technical/system updates).,rss
+xetra_press_releases_rss,Deutsche Börse Cash Market / Xetra,exchange_group,EU,rss,https://www.eurexgroup.com/xetra-en/newsroom/press-releases/3495266!listFeed,Press releases RSS for Xetra/Deutsche Börse Cash Market page.,rss

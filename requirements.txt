@@ -1,0 +1,11 @@
+feedparser
+requests
+beautifulsoup4
+lxml
+python-dateutil
+
+google-api-python-client
+google-auth
+google-auth-httplib2
+
+pandas
